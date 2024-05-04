@@ -89,8 +89,8 @@ def send_message(chat_id, text):
 
 if __name__ == '__main__':
     # Set up webhook
-    bot_token = "7158075563:AAEUV12F7LcvUlu2MO_iiYG798UNJJfTWoU"
-    webhook_url = "https://api.telegram.org/bot7158075563:AAEUV12F7LcvUlu2MO_iiYG798UNJJfTWoU/setWebhook?url=https://api.telegram.org/bot7158075563:AAEUV12F7LcvUlu2MO_iiYG798UNJJfTWoU/getUpdates"
+    bot_token = "YOUR_BOT_TOKEN"
+    webhook_url = "WEB HOOK URL"
     response = requests.get(f"https://api.telegram.org/bot{bot_token}/setWebhook?url={webhook_url}")
     if response.ok:
         logger.info("Webhook set up successfully")
