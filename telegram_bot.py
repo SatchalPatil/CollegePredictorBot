@@ -9,11 +9,11 @@ from telegram.ext import Application, CommandHandler, MessageHandler, CallbackCo
 data_cet = pd.read_csv("CET_cutoff.csv")
 data_jee = pd.read_csv("JEE_cutoff.csv")
 
-# Encode college names for CET
+# Encode college CET
 label_encoder_cet = LabelEncoder()
 data_cet['college_label'] = label_encoder_cet.fit_transform(data_cet['college_name'])
 
-# Encode college names for JEE
+# Encode college JEE
 label_encoder_jee = LabelEncoder()
 data_jee['college_label'] = label_encoder_jee.fit_transform(data_jee['college_name'])
 
@@ -37,7 +37,7 @@ def get_top_colleges(data, label_encoder, user_score, model):
     sorted_colleges = data.sort_values(by='distance').head(10)
     return sorted_colleges['college_name'].tolist()
 
-# Command: /start
+# /start
 async def start(update: Update, context: CallbackContext) -> None:
     await update.message.reply_text(
         "Welcome! Enter your exam type and score in the format:\n\n"
@@ -47,7 +47,7 @@ async def start(update: Update, context: CallbackContext) -> None:
         parse_mode="Markdown"
     )
 
-# Command: /help
+# /help
 async def help_command(update: Update, context: CallbackContext) -> None:
     await update.message.reply_text(
         "Enter your exam type and score in the format:\n\n"
@@ -57,7 +57,7 @@ async def help_command(update: Update, context: CallbackContext) -> None:
         parse_mode="Markdown"
     )
 
-# Handle user input
+# Handle input
 async def handle_message(update: Update, context: CallbackContext) -> None:
     text = update.message.text.strip().upper()
 
@@ -87,18 +87,14 @@ async def handle_message(update: Update, context: CallbackContext) -> None:
 
 # Main function
 def main() -> None:
-    # Replace with your Telegram bot token
-    TOKEN = "7546053777:AAE1jkBzgyN7jGh1pvwYtxVjpeJjQmMfkj8"
+    TOKEN = "BOT_TOKEN"
 
-    # Create the application
     app = Application.builder().token(TOKEN).build()
 
-    # Add handlers
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    # Start the bot
     print("Bot is running...")
     app.run_polling()
 
