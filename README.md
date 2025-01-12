@@ -29,7 +29,6 @@ A machine learning-powered bot that predicts and ranks the top 10 colleges based
 ## Prerequisites
 Ensure Python 3.7+ is installed along with the following libraries:
 
-```bash
 pip install pandas scikit-learn python-telegram-bot
 
 ---
@@ -48,20 +47,23 @@ Open Telegram and send /start to the bot.
 
 Enter your CET percentile or JEE rank to get predictions.
 
-Workflow
-Model Training
-Algorithm: Random Forest Classifier.
-Features:
-For CET: Percentile-based predictions.
-For JEE: Rank-based predictions.
-Training: Data split into 80% training and 20% testing.
-Prediction
-User score is passed to the trained model.
-Top 10 colleges are retrieved based on proximity to the user's score.
-Telegram Bot
-User interacts with the bot by providing their scores.
-Bot responds with the top 10 colleges for the given CET or JEE exam.
-Sample Commands for Telegram Bot
-/start: Initiate the bot.
-Provide CET percentile (e.g., 95.6).
-Provide JEE rank (e.g., 1500).
+## Workflow
+# Model Training
+- Algorithm: Random Forest Classifier.
+- Features:
+  For CET: Percentile-based predictions.
+  For JEE: Rank-based predictions.
+- Training: Data split into 80% training and 20% testing.
+- 
+# Prediction
+- User score is passed to the trained model.
+- Top 10 colleges are retrieved based on proximity to the user's score.
+- 
+# Telegram Bot
+- User interacts with the bot by providing their scores.
+- Bot responds with the top 10 colleges for the given CET or JEE exam.
+
+## Sample Commands for Telegram Bot
+- /start: Initiate the bot.
+- Provide CET percentile (e.g., 95.6).
+- Provide JEE rank (e.g., 1500).
