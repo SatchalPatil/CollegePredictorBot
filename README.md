@@ -67,3 +67,9 @@ Enter your CET percentile or JEE rank to get predictions.
 - /start: Initiate the bot.
 - Provide CET percentile (e.g., 95.6).
 - Provide JEE rank (e.g., 1500).
+
+  ![Screenshot 2024-11-27 000236](https://github.com/user-attachments/assets/b434624b-9214-4fd7-b57c-6f81b8d02d42)
+
+  ![Screenshot 2024-11-27 000133](https://github.com/user-attachments/assets/27c7843e-6a0c-4cee-99d0-46131cee455d)
+
+
